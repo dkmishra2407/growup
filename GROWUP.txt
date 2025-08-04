@@ -1,0 +1,48 @@
+if __name__ == '__main__':
+    # Start the background thread for data fetching
+    data_thread = threading.Thread(target=fetch_stock_data)
+    data_thread.daemon = True
+    data_thread.start()
+    
+    # Run the Flask app with SocketIO
+    socketio.run(app, debug=True, allow_unsafe_werkzeug=True)
+
+EXPLANATION :- 
+Creates a daemon thread for continuous stock data fetching
+daemon=True ensures the thread terminates when the main program exits
+Starts thread execution immediately with start()
+Runs fetch_stock_data() in parallel with the web server
+
+PART 2:- 
+Starts the Flask-SocketIO server using the recommended method
+
+debug=True enables:
+
+Werkzeug development server
+
+Automatic reloader for code changes
+
+Detailed error pages
+
+allow_unsafe_werkzeug=True permits using Werkzeug with threads despite security warnings
+
+Main Thread                        Background Thread
+-------------                      -------------------
+SocketIO Server
+  ├─ Handles HTTP/WebSocket       Continuous stock data
+  ├─ Manages client connections   fetching every 5s
+  └─ Processes SocketIO events    Emits updates via socketio.emit()
+
+
+//////////////////////////////////////////////////
+
+Werkzeug development server :- 
+
+IT IS A WEB SERVER 
+
+Purpose
+The development server included in Werkzeug is designed to help developers test their applications locally without requiring the setup of a full-featured production web server like Apache, Nginx, or Gunicorn.
+
+////////////////////////////////////
+
+Multithreading supported via the threading module.

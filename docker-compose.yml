@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./frontend:/app
+    restart: always
+
+  flask:
+    build: ./Flask
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./flask:/app
+    restart: always

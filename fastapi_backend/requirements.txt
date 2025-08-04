@@ -1,0 +1,21 @@
+# Flask stack
+flask==2.0.3
+werkzeug==2.0.3
+flask-cors
+jinja2==3.0.3
+markupsafe==2.0.1
+pymongo
+python-dotenv
+nsepython
+
+# Data tools
+jugaad-data
+pandas
+
+# FastAPI stack
+fastapi
+uvicorn[standard]
+cachetools
+flask-sock
+nsepython
+feedparser
