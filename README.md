@@ -89,5 +89,5 @@ npm start
 Devansh Mishra
 Final Year Student, PICT Pune
 
-Passionate about finance + tech, backend systems, and real-time apps
+Passionate about finance + tech, backend systems, and real-time app
 
